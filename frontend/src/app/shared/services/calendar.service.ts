@@ -20,6 +20,7 @@ export class CalendarService {
         map((res: HttpResponse<any>) => {
           if (res.body.status === 200) {
             return res.body.data.map((task: Partial<Task>) => new Task(
+              task.id || -1,
               task.user_id || '',
               task.name || '',
               task.priority || 0,
