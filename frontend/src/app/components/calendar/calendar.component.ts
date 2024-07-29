@@ -269,9 +269,12 @@ export class CalendarComponent implements OnInit {
     }
     this.dayClicked.emit(this.getTasksForDay(new Date(day.year, day.month, day.date)));
 
+    //const dayPopup = this.modal.open(TasksPopupComponent, { centered: true });
+    //dayPopup.componentInstance.day = day;\
+    //dayPopup.componentInstance.close.subscribe((res) => dayPopup.close());
     if (!day.isFiller) {
       this.tasksPopup.highlightTasks(this.getTasksForDay(new Date(day.year, day.month, day.date)));
-      console.log('Tasks for the day:', this.getTasksForDay(new Date(day.year, day.month, day.date)));
+      //console.log('Tasks for the day:', this.getTasksForDay(new Date(day.year, day.month, day.date)));
     }
 
     this.cdr.detectChanges();
